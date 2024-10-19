@@ -14,7 +14,7 @@ fileRead.addEventListener("change", (event) => {
     content = file.text();
 });
 fileRun.addEventListener("click", function() {
-    doc.getElementsByClassName("reportContent").textContent = content;
+    doc.getElementsByClassName("reportContent")[0].textContent = content;
 })
 
 var title = doc.getElementsByClassName("reportTitle");
