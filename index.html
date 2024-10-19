@@ -1,61 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AEP Challenge</title>
+
+    <style>
+        .reportContent {
+            display: none;
+        }
+    </style>
+
 </head>
+
 <body>
     <header>
         <h1>Stand In</h1>
     </header>
     <div>
         <input type="search" placeholder="Enter file path">
-        <button>Generate</button>
+        <button type="submit">Generate</button>
     </div>
 
     <hr>
     <div>
-        <button>Filter by</button> 
-        <input type="checkbox" value="Open All">
+        <button>Filter by</button>
+        <!-- <input type="checkbox"> -->
     </div>
     <div>
-        <h3>Comments:</h3>
+        <h3>Reports:</h3>
         <ol class="ranking">
             <li>
-
-            </li>
-            <li>
-
-            </li>
-            <li>
-
-            </li>
-            <li>
-
-            </li>
-            <li>
-
-            </li>
-            <li>
-
-            </li>
-            <li>
-
-            </li>
-            <li>
-
-            </li>
-            <li>
-
-            </li>
-            <li>
-
+                <div>
+                    <button class="reportTitle">Report Title</button>
+                    <div class="reportContent">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit voluptates aliquid deleniti?
+                            Maxime repudiandae rem, consequatur ratione facere optio quo aut, totam laudantium provident
+                            nihil est consequuntur culpa veritatis repellendus.
+                        </p>
+                    </div>
+                </div>
             </li>
         </ol>
     </div>
     <footer>
 
     </footer>
+    <script>
+        // var doc = document;
+        var title = document.getElementsByClassName("reportTitle");
+
+        for (var i = 0; i < title.length; i++) {
+            title[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var comment = this.nextElementSibling;
+                if (comment.style.display === "block") {
+                    comment.style.display = "none";
+                } else {
+                    comment.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
+
 </html>
