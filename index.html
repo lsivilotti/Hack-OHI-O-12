@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AEP Challenge</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <style>
         .report {
             display: none;
@@ -11,61 +13,61 @@
     </style>
 
 </head>
+
 <body>
-<header>
-    <h1>AEP Reports</h1>
-</header>
-{% block main %}
-<div>
-    <input type="file" id="fileInput">
-    <button id="run">Generate</button>
-</div>
-<hr>
-<div class="container">
-    <div class="section">
-        <h1 class="text-center">Recent Posts</h1>
-        <ol class="ranking">
-        {% for issue in issues %}
-            <li>
-                <div class="reportInfo">
-                    <button class="reportTitle">Report Title</button>
-                    <div class="report">
-                        <h3 class="card-title">{{ issue.OBSRVTN_NB }}</h3>
-                        <h4>Posted by: {{issue.DATETIME_TDM}}</h4>
-                        <h5>Post language: {{issue.PNT_NM}}</h5>
-                        <p class="card-text">{{ issue.QUALIFIER_TXT}}</p>
-                        <p class="card-text">{{ issue.PNT_ATRISKNOTES_TX}}</p>
-                        <p class="card-text">{{ issue.PNT_ATRISKFOLWUPS_TX}}</p>
-                        <p class="reportContent">
-
-
-                        </p>
-
-                    </div>
-                </div>
-            </li>
-        {% endfor %}
-        </ol>
+    <header>
+        <h1>AEP Reports</h1>
+    </header>
+    {% block main %}
+    <div>
+        <input type="file" id="fileInput">
+        <button id="run">Generate</button>
     </div>
-</div>
+    <hr>
+    <div class="container">
+        <div class="section">
+            <h1 class="text-center">Recent Posts</h1>
+            <ol class="ranking">
+                {% for issue in issues %}
+                <li>
+                    <div class="reportInfo">
+                        <button class="reportTitle">Report Title</button>
+                        <div class="report">
+                            <h3 class="card-title">{{ issue.OBSRVTN_NB }}</h3>
+                            <h4>Posted by: {{issue.DATETIME_TDM}}</h4>
+                            <h5>Post language: {{issue.PNT_NM}}</h5>
+                            <p class="card-text">{{ issue.QUALIFIER_TXT}}</p>
+                            <p class="card-text">{{ issue.PNT_ATRISKNOTES_TX}}</p>
+                            <p class="card-text">{{ issue.PNT_ATRISKFOLWUPS_TX}}</p>
+                            <p class="reportContent">
 
-{% endblock %}
-<script>
-    var title = document.getElementsByClassName("reportTitle");
-    
-    for (var i = 0; i < title.length; i++) {
-        title[i].addEventListener("click", function () {
-            this.classList.toggle("active");
-            var comment = this.nextElementSibling;
-            if (comment.style.display === "block") {
-                comment.style.display = "none";
-            } else {
-                comment.style.display = "block";
-            }
-        });
-    }
-</script>
+
+                            </p>
+
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+
+    {% endblock %}
+    <script>
+        var title = document.getElementsByClassName("reportTitle");
+
+        for (var i = 0; i < title.length; i++) {
+            title[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var comment = this.nextElementSibling;
+                if (comment.style.display === "block") {
+                    comment.style.display = "none";
+                } else {
+                    comment.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
+
 </html>
-
-
