@@ -33,8 +33,11 @@
         <h3>Reports:</h3>
         <ol id="ranking">
             <script>
+                /* this loop creates 10 list items (<li> tag) and other tags/content within <li>
+                    the string is the same as the commented out HTML code below, just on one line */
                 var lists = document.getElementById("ranking");
                 for (var i = 0; i < 10; i++) {
+                    // variable that gets added to HTML code
                     lists.innerHTML += "<li><div class=\"reportInfo\"><button class=\"reportTitle\">Report Title</button><div class=\"report\"><p class=\"reportContent\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit voluptates aliquid deleniti?Maxime repudiandae rem, consequatur ratione facere optio quo aut, totam laudantium providentnihil est consequuntur culpa veritatis repellendus.</p></div></div></li>";
                 }
             </script>
