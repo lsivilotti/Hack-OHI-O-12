@@ -3,6 +3,7 @@ var doc = document;
 var fileRun = doc.getElementById("run");
 var fileRead = doc.getElementById("fileInput");
 var content;
+
 fileRead.addEventListener("change", (event) => {
     var file = event.target.files[0];
     var reader = new FileReader;
@@ -13,8 +14,12 @@ fileRead.addEventListener("change", (event) => {
 
     content = file.text();
 });
-fileRun.addEventListener("click", function() {
-    doc.getElementsByClassName("reportContent")[0].textContent = content;
+
+fileRun.addEventListener("click", function () {
+    var a = doc.getElementsByClassName("reportContent");
+    for(var i = 0; i < a.length; i++) {
+        a[i].textContent = content;
+    }
 })
 
 var title = doc.getElementsByClassName("reportTitle");

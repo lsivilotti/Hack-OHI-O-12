@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AEP Challenge</title>
 
+    <link rel="stylesheet" type="text/css" href="style.css">
+
     <style>
         .report {
             display: none;
@@ -26,13 +28,18 @@
     <hr>
     <div>
         <button>Filter by</button>
-        <!-- <input type="checkbox"> -->
     </div>
     <div>
         <h3>Reports:</h3>
-        <ol class="ranking">
-            <li>
-                <div>
+        <ol id="ranking">
+            <script>
+                var lists = document.getElementById("ranking");
+                for (var i = 0; i < 10; i++) {
+                    lists.innerHTML += "<li><div class=\"reportInfo\"><button class=\"reportTitle\">Report Title</button><div class=\"report\"><p class=\"reportContent\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit voluptates aliquid deleniti?Maxime repudiandae rem, consequatur ratione facere optio quo aut, totam laudantium providentnihil est consequuntur culpa veritatis repellendus.</p></div></div></li>";
+                }
+            </script>
+            <!-- <li>
+                <div class="reportInfo">
                     <button class="reportTitle">Report Title</button>
                     <div class="report">
                         <p class="reportContent">
@@ -42,7 +49,7 @@
                         </p>
                     </div>
                 </div>
-            </li>
+            </li> -->
         </ol>
     </div>
     <footer>
