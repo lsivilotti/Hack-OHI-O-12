@@ -1,7 +1,17 @@
+@keyframes rotate {
+    0% {
+
+    }
+    100%{
+        rotate: 360deg;
+    }
+}
+
 body {
     background-image: linear-gradient(to left, #D3CCE3, #E9E4F0);
     text-align: center;
     padding: 0 5%;
+    animation: rotate 5000ms linear 0ms infinite reverse;
 }
 
 .reportInfo {
@@ -14,11 +24,11 @@ body {
     border: none;
     cursor: pointer;
     padding: 10px 0px;
-    background-color: darkgray;
+    background-image: linear-gradient(#FFEFBA, white);
 }
 
 .reportTitle:hover {
-    background-color: gray;
+    background-image: linear-gradient(white, #ffefba);
 }
 
 .report {
@@ -26,4 +36,29 @@ body {
     border-width: 5px;
     border-color: black;
     padding: 10px;
+}
+
+#fileInput {
+    background-image: linear-gradient(to top, orange, green);
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#fileInput:hover {
+    background-image: linear-gradient(to bottom, orange, green);
+    cursor: pointer;
+}
+
+#run {
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    background-image: radial-gradient(#59C173, #a17fe0, #5D26C1);
+    border-radius: 10px;
+}
+
+#run:hover {
+    background: #59C173;
 }

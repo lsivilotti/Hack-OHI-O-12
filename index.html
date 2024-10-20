@@ -15,46 +15,49 @@
 </head>
 
 <body>
-    <header>
-        <h1>AEP Reports</h1>
-    </header>
-    {% block main %}
-    <div>
-        <form>
-            <input type="file" id="fileInput">
-            <button id="run">Generate</button>
-        </form>
-    </div>
-    <hr>
-    <div class="container">
-        <div class="section">
-            <h1 class="text-center">Recent Posts</h1>
-            <ol class="ranking">
-                {% for issue in issues %}
-                <li>
-                    <div class="reportInfo">
-                        <button class="reportTitle">Report Title</button>
-                        <div class="report">
-                            <h3 class="card-title">{{ issue.OBSRVTN_NB }}</h3>
-                            <h4>Posted by: {{issue.DATETIME_TDM}}</h4>
-                            <h5>Post language: {{issue.PNT_NM}}</h5>
-                            <p class="card-text">{{ issue.QUALIFIER_TXT}}</p>
-                            <p class="card-text">{{ issue.PNT_ATRISKNOTES_TX}}</p>
-                            <p class="card-text">{{ issue.PNT_ATRISKFOLWUPS_TX}}</p>
-                            <p class="reportContent">
+    <div class="rotate">
+        <header>
+            <h1>AEP Reports</h1>
+        </header>
+        {% block main %}
+        <div>
+            <form>
+                <input type="file" id="fileInput">
+                <button id="run">Generate</button>
+            </form>
+        </div>
+        <hr>
+        <div class="container">
+            <div class="section">
+                <h1 class="text-center">Recent Posts</h1>
+                <ol class="ranking">
+                    {% for issue in issues %}
+                    <li>
+                        <div class="reportInfo">
+                            <button class="reportTitle">Report Title</button>
+                            <div class="report">
+                                <h3 class="card-title">{{ issue.OBSRVTN_NB }}</h3>
+                                <h4>Posted by: {{issue.DATETIME_TDM}}</h4>
+                                <h5>Post language: {{issue.PNT_NM}}</h5>
+                                <p class="card-text">{{ issue.QUALIFIER_TXT}}</p>
+                                <p class="card-text">{{ issue.PNT_ATRISKNOTES_TX}}</p>
+                                <p class="card-text">{{ issue.PNT_ATRISKFOLWUPS_TX}}</p>
+                                <p class="reportContent">
 
 
-                            </p>
+                                </p>
 
+                            </div>
                         </div>
-                    </div>
-                </li>
-                {% endfor %}
-            </ol>
+                    </li>
+                    {% endfor %}
+                </ol>
+            </div>
         </div>
     </div>
 
     {% endblock %}
+    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script> -->
     <script>
         var title = document.getElementsByClassName("reportTitle");
 
@@ -69,6 +72,26 @@
                 }
             });
         }
+
+        var fileRun = document.getElementById("run");
+        var fileRead = document.getElementById("fileInput");
+        var content;
+
+        fileRead.addEventListener("change", (event) => {
+            var file = event.target.files[0];
+            content = file.name;
+        });
+
+        // fileRun.addEventListener("click", function() {
+        //     const varValue = content;
+        //     const a = JSON.stringify(varValue);
+        //     $.ajax ({
+        //         url: "/test";
+        //         type: "POST";
+        //         contentType: "application/json";
+        //         type: JSON.stringify(a);
+        //     });
+        // });
     </script>
 </body>
 
